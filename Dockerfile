@@ -18,5 +18,5 @@ RUN npm install -g yarn
 # copy in the rest of our local source
 COPY . .
 # set the debug environment variable
-ENV DEBUG=kfd-nodejs:*
+ENV DEBUG=chaticorn-2.0:*
 CMD ["npm", "start"]

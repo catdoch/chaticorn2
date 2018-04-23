@@ -14,7 +14,7 @@ WORKDIR /src
 COPY package.json .
 COPY yarn.lock .
 # install the library dependencies for this application
-RUN npm install -g yarn
+RUN yarn
 # copy in the rest of our local source
 COPY . .
 # set the debug environment variable

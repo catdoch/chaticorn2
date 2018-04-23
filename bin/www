@@ -1,90 +1,117 @@
-#!/usr/bin/env node
+// #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
+// /**
+//  * Module dependencies.
+//  */
 
-var app = require('../app');
-var debug = require('debug')('chaticorn-2.0:server');
-var http = require('http');
+// var io = require('socket.io');
+// var app = require('../app');
+// var debug = require('debug')('kfd-nodejs:server');
+// var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
+// /**
+//  * Get port from environment and store in Express.
+//  */
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+// var port = normalizePort(process.env.PORT || '3000');
+// app.set('port', port);
 
-/**
- * Create HTTP server.
- */
+// /**
+//  * Create HTTP server.
+//  */
 
-var server = http.createServer(app);
+// var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+// var chat_room = io.listen(server);
+// var usernames = {};
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+// /**
+//  * Listen on provided port, on all network interfaces.
+//  */
 
-/**
- * Normalize a port into a number, string, or false.
- */
+// server.listen(port);
+// //server.on('error', onError);
+// //server.on('listening', onListening);
 
-function normalizePort(val) {
-  var port = parseInt(val, 10);
+// chat_room.sockets.on('connection', function(socket) {
 
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
+// 	socket.on('adduser', function(username, colour) {
+// 			socket.username = username;
+// 			socket.colour = colour;
+// 			usernames[username] = username;
 
-  if (port >= 0) {
-    // port number
-    return port;
-  }
+// 			socket.emit('updatechat', 'SERVER', 'Welcome to the chat!');
+// 			socket.broadcast.emit('updatechat', 'SERVER', username + ' has connected');
+// 			chat_room.sockets.emit('updateusers', usernames);
+// 	});
 
-  return false;
-}
+// 	socket.on('disconnect', function() {
+// 			delete usernames[socket.username];
+// 			chat_room.sockets.emit('updateusers', usernames);
+// 			socket.broadcast.emit('updatechat', 'SERVER', socket.username + ' has disconnected');
+// 	});
 
-/**
- * Event listener for HTTP server "error" event.
- */
+// 	socket.on('sendchat', function(data) {
+// 			chat_room.sockets.emit('updatechat', socket.username, data, socket.colour);
+// 	});
+// });
 
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
+// /**
+//  * Normalize a port into a number, string, or false.
+//  */
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+// function normalizePort(val) {
+// 	var port = parseInt(val, 10);
 
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
+// 	if (isNaN(port)) {
+// 		// named pipe
+// 		return val;
+// 	}
 
-/**
- * Event listener for HTTP server "listening" event.
- */
+// 	if (port >= 0) {
+// 		// port number
+// 		return port;
+// 	}
 
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}
+// 	return false;
+// }
+
+// /**
+//  * Event listener for HTTP server "error" event.
+//  */
+
+// function onError(error) {
+// 	if (error.syscall !== 'listen') {
+// 		throw error;
+// 	}
+
+// 	var bind = typeof port === 'string'
+// 		? 'Pipe ' + port
+// 		: 'Port ' + port;
+
+// 	// handle specific listen errors with friendly messages
+// 	switch (error.code) {
+// 		case 'EACCES':
+// 			console.error(bind + ' requires elevated privileges');
+// 			process.exit(1);
+// 			break;
+// 		case 'EADDRINUSE':
+// 			console.error(bind + ' is already in use');
+// 			process.exit(1);
+// 			break;
+// 		default:
+// 			throw error;
+// 	}
+// }
+
+// /**
+//  * Event listener for HTTP server "listening" event.
+//  */
+
+// function onListening() {
+// 	var addr = server.address();
+// 	var bind = typeof addr === 'string'
+// 		? 'pipe ' + addr
+// 		: 'port ' + addr.port;
+// 	debug('Listening on ' + bind);
+// }

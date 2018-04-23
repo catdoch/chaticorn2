@@ -1,0 +1,99 @@
+body {
+  background-color: #e9fcff;
+  font-family: "Roboto Slab", Helvetica, Arial, sans-serif; }
+
+.content-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .content-sidebar #chatroom {
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    margin: 12px 12px 0px 12px;
+    min-height: 300px;
+    border: 2px solid #22BCCC;
+    overflow: none;
+    grid-column-start: 1;
+    grid-column-end: 4; }
+    .content-sidebar #chatroom #conversation {
+      font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+      list-style: none;
+      padding: 0px;
+      overflow-y: scroll;
+      max-height: 300px; }
+      .content-sidebar #chatroom #conversation li {
+        padding: 5px 10px;
+        opacity: 0.85;
+        border-top: 1px solid #FFF; }
+        .content-sidebar #chatroom #conversation li .date {
+          display: block;
+          font-size: 10px;
+          text-align: right;
+          padding-top: 8px; }
+  .content-sidebar .sidebar {
+    margin: 12px 12px 0px 6px;
+    grid-column-start: 4;
+    border: 2px solid #22BCCC;
+    background: rgba(255, 255, 255, 0.85);
+    overflow-y: scroll;
+    overflow: auto; }
+    .content-sidebar .sidebar #userList h4 {
+      padding: 12px;
+      margin: 0px;
+      font-size: 1.5em;
+      text-decoration: underline; }
+    .content-sidebar .sidebar #userList #users div {
+      padding: 12px; }
+
+.button_input_group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .button_input_group #data {
+    padding: 12px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: auto;
+    font-size: 1em;
+    margin: 12px 12px 0px 12px; }
+  .button_input_group #datasend {
+    flex: 1 1 auto;
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    grid-column-start: 4;
+    font-size: 1rem;
+    padding: 15px 30px;
+    background: #e98ad3;
+    color: #FFF;
+    margin: 12px 12px 0px 6px;
+    line-height: 1;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid #FFF; }
+    .button_input_group #datasend:hover {
+      color: #FFF; }
+    .button_input_group #datasend:active {
+      position: relative;
+      top: 1px; }
+
+.emoji {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  margin-bottom: -0.25em;
+  background-size: contain;
+  vertical-align: text-top; }
+
+ul li p, b {
+  display: inline-block; }
+
+p, b {
+  padding-right: 5px; }
+
+::-webkit-scrollbar {
+  width: 12px; }
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }

@@ -13,10 +13,11 @@ WORKDIR /src
 # move requirements file into the container
 COPY package.json .
 COPY yarn.lock .
-# install the library dependencies for this application
-RUN yarn
 # copy in the rest of our local source
 COPY . .
+# install the library dependencies for this application
+RUN npm run build
+RUN npm run transpile
 # set the debug environment variable
 ENV DEBUG=chaticorn-2.0:*
-CMD ["npm", "prod"]
+CMD ["npm", "start"]

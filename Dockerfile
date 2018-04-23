@@ -19,4 +19,4 @@ RUN npm install -g yarn
 COPY . .
 # set the debug environment variable
 ENV DEBUG=chaticorn-2.0:*
-CMD ["npm", "start"]
+CMD ["npm", "prod"]

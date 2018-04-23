@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": false,
   "scripts": {
-    "start": "react-scripts start",
-    "start:prod": "node app.js",
+    "start": "node app.js",
+    "prod": "react-scripts build && node app.js",
     "build": "react-scripts build",
     "scss": "node-sass --include-path scss public/styles.scss build/static/css/styles.css",
     "transpile": "NODE_ENV=production babel src --out-dir build/static/js --presets es2015,react-app"

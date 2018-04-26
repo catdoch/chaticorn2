@@ -1,0 +1,33 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: chaticorn
+  labels:
+    run: chaticorn
+spec:
+  template:
+    metadata:
+      labels:
+         app: chaticorn
+    spec:
+      containers:
+      - name: chaticorn
+        image: quay.io/catdoch/chaticorn:0.2.3
+        ports: 
+        - containerPort: 3000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

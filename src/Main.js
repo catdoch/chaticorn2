@@ -7,7 +7,7 @@ class Main extends Component {
         super(props);
 
         this.state = {
-            endpoint: window.location.origin,
+            endpoint: 'http://localhost:3000',
             message: '',
             messages: [],
             usernames: []
